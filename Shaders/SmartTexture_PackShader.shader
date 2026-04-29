@@ -56,33 +56,6 @@
 
     SubShader
     {
-        Tags { "RenderType"="Opaque" "RenderPipeline"="UniversalRenderPipeline"}
-
-        Pass
-        {
-            Tags { "LightMode"="UniversalForward" }
-
-            HLSLPROGRAM
-            #pragma vertex vert
-            #pragma fragment frag
-            
-            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-
-            varyings vert(attributes i)
-            {
-                varyings o;
-                
-                o.positionCS = TransformObjectToHClip(i.positionOS.xyz);
-                o.uv = i.uv;
-                
-                return o;
-            }
-            ENDHLSL
-        }
-    }
-
-    SubShader
-    {
         Pass
         {
             HLSLPROGRAM
